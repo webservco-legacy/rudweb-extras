@@ -1,0 +1,136 @@
+
+<!-- TWO STEPS TO INSTALL HEX-RGB CONVERTER:
+
+  1.  Copy the coding into the HEAD of your HTML document
+  2.  Add the last code into the BODY of your HTML document  -->
+
+<!-- STEP ONE: Paste this code into the HEAD of your HTML document  -->
+
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ryan Sokol -->
+<!-- Web Site:  http://www.logicode.net -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+function NumToHex(num1,num2) {
+strNum=document.forms[0].elements[num1].value;
+for(i = 0; i < strNum.length; i++) {
+chr=strNum.substring(i, i + 1);		
+if((isNaN(chr))||(chr == ' ')) {
+alert('You must enter a digit between 0 and 9!');
+document.forms[0].elements[num1].select();
+document.forms[0].elements[num2].value='';
+return false;
+   }
+}
+if(strNum > 255) {
+alert('You must enter a number between 0 and 255!');
+document.forms[0].elements[num1].select();
+document.forms[0].elements[num2].value='';
+return false;
+}
+else {
+base = strNum / 16;
+rem = strNum % 16;
+base = base - (rem / 16);
+baseS = MakeHex(base);
+remS = MakeHex(rem);
+document.forms[0].elements[num2].value=baseS + '' + remS;
+ChangeBackground(3, 4, 5);
+return true;
+   }
+}
+function MakeHex(x) {
+if((x >= 0) && (x <= 9))
+return x;
+else {
+switch(x) {
+case 10: return "A"; 
+case 11: return "B";  
+case 12: return "C";  
+case 13: return "D";  
+case 14: return "E";  
+case 15: return "F";  
+      }
+   }
+}
+function HexToNum(num1,num2) {
+numberS = document.forms[0].elements[num1].value;
+tens = MakeNum(numberS.substring(0,1));
+if(tens == 'X') {
+document.forms[0].elements[num1].select();
+document.forms[0].elements[num2].value='';
+return false;
+}
+ones = 0;
+if(numberS.length > 1) // means two characters entered
+ones=MakeNum(numberS.substring(1,2));
+if(ones == 'X') {
+document.forms[0].elements[num1].select();
+document.forms[0].elements[num2].value='';
+return false;
+}
+document.forms[0].elements[num2].value = (tens * 16) + (ones * 1);
+document.forms[0].elements[num1].value = document.forms[0].elements[num1].value.toUpperCase();
+ChangeBackground(3, 4, 5);
+return true;
+}
+function MakeNum(str) {
+if((str >= 0) && (str <= 9))
+return str;
+switch(str.toUpperCase()) {
+case "A": return 10;
+case "B": return 11;
+case "C": return 12;
+case "D": return 13;
+case "E": return 14;
+case "F": return 15;
+default:  alert('You must choose a number between 0 and 9 or a letter between A and F!');
+return 'X';
+   }
+}
+function ChangeBackground(num1, num2, num3) {
+document.bgColor = '#'+document.forms[0].elements[num1].value + document.forms[0].elements[num2].value + document.forms[0].elements[num3].value;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<!-- STEP TWO: Copy this code into the BODY of your HTML document  -->
+
+<BODY>
+
+<form>
+<table border=1 align=center cellpadding=10 bgcolor=white>
+<tr>
+<th>Color/Code</th>
+<th>Red</th>
+<th>Green</th>
+<th>Blue</th>
+</tr>
+<tr>
+<th>0-255</th>
+<td><input type=text name=rr_num size=4 maxlength=3 onKeyUp="return NumToHex(0,3);"></td>
+<td><input type=text name=gg_num size=4 maxlength=3 onKeyUp="return NumToHex(1,4);"></td>
+<td><input type=text name=bb_num size=4 maxlength=3 onKeyUp="return NumToHex(2,5);"></td>
+</tr>
+<tr>
+<th>HEX</th>
+<td><input type=text name=rr_hex size=4 maxlength=2 onKeyUp="return HexToNum(3,0);"></td>
+<td><input type=text name=gg_hex size=4 maxlength=2 onKeyUp="return HexToNum(4,1);"></td>
+<td><input type=text name=bb_hex size=4 maxlength=2 onKeyUp="return HexToNum(5,2);"></td>
+</tr>
+</table>
+</form>
+
+<p><center>
+<font face="arial, helvetica" size"-2">Free JavaScripts provided<br>
+by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
+</center><p>
+
+<!-- Script Size:  3.91 KB -->

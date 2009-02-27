@@ -1,0 +1,131 @@
+----------------------------------------------------------------------------------------------------
+cake:
+[]app (current_app)
+[][]config
+[][]controllers
+[][]models
+[][]plugins
+[][]tmp
+[][]vendors
+[][]views
+[][]webroot
+
+[]cake (core)
+
+[][] config
+
+[][] libs
+[][][] controller
+[][][] model
+[][][] view
+
+[][] scripts
+
+[]docs (documentation)
+[]vendors (third party)
+
+----------------------------------------------------------------------------------------------------
+barebones sample:
+
+[] backend (controllers)
+[] class (core classes + additional)
+[][] core
+[][] extend
+[] frontend (templates)
+[] module (small stuff, twitter, avatar, api)
+----------------------------------------------------------------------------------------------------
+itzone.ro
+
+model: (clase)
+- db
+- authentication
+- HTTPAuth prin .htaccess
+- autentificare obisnuita cu baza de date
+- LDAP
+- file handling
+- debugging
+- caching
+
+view:
+- html simplu
+- smarty
+- rest/xml
+- pdf
+- poate am dori si o clasa speciala pentru rss, separata de cea generala xml
+
+controller:
+- Vede care este modelul. Apoi vede care este actiunea care trebuie executata
+- va chema automat viewul
+
+
+
+Fiecare sectiune a siteului va reprezenta un Model, caruia ii va corespunde un Controller
+
+
+App
+# controllers – toate clasele de controller
+# models – toate clasele de model
+# views – va contine un subdirector pentru fiecare model, in care vor fi stocate templateurile
+# public - vor fi cssurile, imaginile, jsurile, headerele comune tuturor paginilor etc – practic skinul/skinurile
+
+Framework
+# abstraction – aici tin interfetele: baseobject, iModel, iController, iDB, iView
+# models – modelele care vin cu frameworkul – deocamdata am clasele specifice diferitelor baze de date
+# controllers – controllere standard
+# views – clasele de views: VSimpleHTML, Vsmarty etc si alte clase de ajutor in view
+# si inca clase secundare, de ajutor general – de ex aSanitize pentru securitate, aFileHandler etc
+
+Conf
+# fisierele de configurare
+
+
+3rdparty
+# aplicatii ca smarty, script.aculo.us etc.
+
+get: model, action
+----------------------------------------------------------------------------------------------------
+controller -> index.php (get: model, event, arguments)
+index.php?module=foo&event=bar => foo::bar()
+----------------------------------------------------------------------------------------------------
+    * config.php
+    * index.php
+    * includes/
+          o Auth.php
+          o Auth/
+                + No.php
+                + User.php
+          o Module.php
+          o Object.php
+          o Object/
+                + DB.php
+          o Presenter.php
+          o Presenter/
+                + common.php
+                + debug.php
+                + smarty.php
+          o Smarty/
+    * modules/
+          o example/
+                + config.php
+                + example.php
+                + tpl/
+                      # example.tpl
+    * tpl/
+          o default/
+          o cache/
+          o config/
+          o templates/
+                + templates_c/
+
+                
+module=users
+class=login
+event=default
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------

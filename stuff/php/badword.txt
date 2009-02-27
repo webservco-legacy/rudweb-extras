@@ -1,0 +1,42 @@
+<?
+//This is totally free to use by anyone for any purpose.
+
+// BadWordFilter
+// This function does all the work. If $replace is 1 it will replace all bad words
+// with the wildcard replacements.  If $replace is 0 it will not replace anything.
+// In either case, it will return 1 if it found bad words or 0 otherwise.
+// Be sure to fill the $bads array with the bad words you want filtered.
+function BadWordFilter(&$text, $replace)
+{
+	//fill this array with the bad words you want to filter and their replacements
+	$bads = array (
+		array("butt","b***"),
+		array("poop","p***"),
+		array("crap","c***")
+	);
+
+	if($replace==1) {								//we are replacing
+		$remember = $text;
+		
+		for($i=0;$i<sizeof($bads);$i++) {			//go through each bad word
+			$text = eregi_replace($bads[$i][0],$bads[$i][1],$text); //replace it
+		}
+
+		if($remember!=$text) return 1; 				//if there are any changes, return 1
+		
+	} else {										//we are just checking
+	
+		for($i=0;$i<sizeof($bads);$i++) {			//go through each bad word
+			if(eregi($bads[$i][0],$text)) return 1; //if we find any, return 1
+		}	
+		
+	}
+}
+
+//this will replace all bad words with their replacements. $any is 1 if it found any
+$any = BadWordFilter($wordsToFilter,1); 
+
+//this will not repace any bad words. $any is 1 if it found any
+$any = BadWordFilter($wordsToFilter,0); 
+
+?>

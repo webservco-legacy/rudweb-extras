@@ -1,0 +1,41 @@
+/* Safari AND Google Chrome! */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #page_content {
+    background-color: #0000ff;
+    margin-right: 0px;
+  }
+}
+/* Opera Only*/
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+  #page_content {
+    background-color: #00ff00;
+    margin-right: 0px;
+  }
+}
+/* Opera 9 - 9.27 */
+@media all and (-webkit-min-device-pixel-ratio:10000) {
+  #page_content {
+    background-color: #000000;
+    margin-right: 30px;
+  }
+}
+
+
+
+/* Target Opera 7.2 up, 9 up, or 9.5 up: */
+	@media all and (-webkit-min-device-pixel-ratio:10000),
+		      not all and (-webkit-min-device-pixel-ratio:0)
+        {
+		/* 7.2 up */
+		head~body … { /* 9 up */ }
+		:root … { /* 9.5 up */ }
+	}
+/* Target Opera 9-9.2x: */
+
+	@media all and (-webkit-min-device-pixel-ratio:10000) {
+		…
+	}
+
+  
+/* Target IE7 only */
+*:first-child+html #left_form {margin-bottom: 1px;}

@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+<SCRIPT>
+/* 
+http://www.netlobo.com
+*/
+function toggleLayer( whichLayer )
+{
+  var elem, vis;
+  if( document.getElementById ) // this is the way the standards work
+    elem = document.getElementById( whichLayer );
+  else if( document.all ) // this is the way old msie versions work
+      elem = document.all[whichLayer];
+  else if( document.layers ) // this is the way nn4 works
+    elem = document.layers[whichLayer];
+  vis = elem.style;
+  // if the style.display value is blank we try to figure it out here
+  if(vis.display==''&&elem.offsetWidth!=undefined&&elem.offsetHeight!=undefined)
+    vis.display = (elem.offsetWidth!=0&&elem.offsetHeight!=0)?'block':'none';
+  vis.display = (vis.display==''||vis.display=='block')?'none':'block';
+}
+</SCRIPT>
+<STYLE>
+DIV.hidden {
+  display: none;
+  background-color: ffffcc;
+}
+</STYLE>
+</HEAD>
+<BODY>
+<a href="javascript:toggleLayer('hiddenDiv1');">show/hide 1</a>
+<a href="javascript:toggleLayer('hiddenDiv2');">show/hide 2</a>
+<a href="javascript:toggleLayer('hiddenDiv1'); toggleLayer('hiddenDiv2');">show/hide all</a>
+<div id="hiddenDiv1" class="hidden">
+hello world
+<BR>
+<a href="javascript:toggleLayer('hiddenDiv1');">hide 1</a>
+</div>
+<HR>
+<div id="hiddenDiv2" class="hidden">
+hello world
+<BR>
+<a href="javascript:toggleLayer('hiddenDiv2');">hide 2</a>
+</div>
+</BODY>
+</HTML>

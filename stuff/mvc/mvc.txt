@@ -1,0 +1,27 @@
+[]model
+- entities (users, properties, countries)
+
+[]controller
+- functions needed on entities (user login, logout, edit, ban)
+
+[]view
+- visual layout
+
+
+input -> processing -> output
+controller -> model -> view
+
+
+
+exemplu:
+
+ai un client care vrea o aplicatie in php dar nu se stie daca se va conecta la mysql, postgree sau sqlite
+
+apoi clientul vrea o interfata in browser si posibilitate de portare pentru desktop (folosind php-gtk sau winbinder)
+
+in situatia data, folosind MVC, creezi un Model de lucru cu sqlite, un model de lucru cu mysql si cate un model pentru fiecare tip de baza de date
+apoi creezi Viewerul pentru browser si Viewerul pentru desktop
+si tot ce mai trebuie sa faci este Controlerul care sa faca legatura intre modelul specificat si viewerul ales...
+
+acum intelegi?
+

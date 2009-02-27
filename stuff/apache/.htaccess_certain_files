@@ -1,0 +1,10 @@
+<Files ~ "\.inc.php$">
+  Order deny,allow
+  Deny from all
+</Files>
+
+
+# no hotlink
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?askapache.com/.*$ [NC]
+RewriteRule \.(gif|jpg|swf|flv|png)$ http://www.askapache.com/feed.gif [R=302,L]
