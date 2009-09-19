@@ -1,0 +1,3 @@
+[] content div must have overflow: auto; if javascript is disabled it will scroll normally, else it will not show the scroller
+[] use javascript to show the arrows only if JS is enabled
+[] arrows must be before script

@@ -1,0 +1,28 @@
+- documentable
+- modular (must be able to add/remove/upgrade everything including the core)
+- keep in mind free servers with many restrictions
+- focus on security but also on speed and simplicty
+- use classes
+- output must be xhtml/css3
+- easy to install/configure/use
+- users can create their own skins
+- users can create their own modules
+- different versions (lite, blog, shop, gallery, etc)
+- build on linux, use bash if possible
+- separate install/upgrade system
+- parsable config files, must be able to write them from php
+- user groups - customizable by the client (aer - add/edit/remove)
+- user levels - standard
+- separate programming from design
+- user can add content: html only or html + php
+- classes: db, file uploads, authentication, templates
+- rss news
+- skins: previewable, separate logo
+- robots.txt
+- sitemap
+- faq
+- skin: page layout includes complete html(<html>...</html>) not only <body> content
+- content: type: page: standard,backend user section / link: shortcut,mountpoint,external url
+/ special: sysfolder,recycler,visual menu separator
+- help tips all over the place: little icons -> small divs -> link to full help
+- page: could be text, table, etc only one, or combined

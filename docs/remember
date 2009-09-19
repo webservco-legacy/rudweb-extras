@@ -1,0 +1,13 @@
+[] default template names: inc/viewer.inc.php L79-84
+[] set default page: in inc/cnt/index.inc.php $cnt['tpl'], $cnt['tt'] = $lang['TEST'], $cnt['content'] => set to default template/title/content
+[] /var/tmp must be writable by the web user or group
+[] template files including smarty will have to have .tpl.php extension
+[] content:
+from file: get page
+from db: get content
+from module (catalog/news/etc): module/name/action/add
+[] modules:
+app_admin ?
+page_admin ?
+content_admin
+catalog_admin
