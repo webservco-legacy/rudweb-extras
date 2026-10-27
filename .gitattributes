@@ -19,3 +19,6 @@
 *.tgz binary
 *.ttf binary
 *.zip binary
+/stuff/regexp/MetaCharacters.txt binary
+/stuff/regexp/Validare.txt binary
+/stuff/regexp/php_regexp.txt binary

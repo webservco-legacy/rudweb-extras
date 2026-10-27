@@ -13,8 +13,8 @@ RudWEb → WEb is my PHP framework line, one archive per era:
    [rudwi](https://github.com/webservco-legacy/rudwi), the web desktop, and **rudweb-extras** (this one) belong to it;
 3. [web-2012-2017](https://github.com/webservco-legacy/web-2012-2017): WEb 5 to 7;
 4. [web7](https://github.com/webservco-legacy/web7): WEb7 as a git archive;
-5. the framework in git since 2017: [framework-v9](https://github.com/webservco-v09/framework-v9), then
-   [framework](https://github.com/webservco-v13/framework) (v10 to v13) and the WebServCo components.
+5. the framework in git since 2017: [framework, branch v9](https://github.com/webservco/framework/tree/v9), then
+   [framework](https://github.com/webservco/framework) (v10 to v13) and the WebServCo components.
 
 ## History
 
